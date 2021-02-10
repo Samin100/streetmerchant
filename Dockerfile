@@ -9,6 +9,7 @@ WORKDIR /build
 COPY package.json package.json
 COPY package-lock.json package-lock.json
 COPY tsconfig.json tsconfig.json
+COPY .env .env
 RUN npm ci
 
 COPY src/ src/
@@ -35,6 +36,7 @@ COPY --from=builder /build/node_modules/ node_modules/
 COPY --from=builder /build/build/ build/
 COPY web/ web/
 COPY package.json package.json
+COPY .env .env
 COPY version.txt version.txt
 
 ENTRYPOINT ["npm", "run"]
