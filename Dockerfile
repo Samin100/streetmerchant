@@ -7,6 +7,7 @@ ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 WORKDIR /build
 
 COPY package.json package.json
+COPY dotenv dotenv
 COPY package-lock.json package-lock.json
 COPY tsconfig.json tsconfig.json
 RUN npm ci
