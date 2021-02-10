@@ -4,8 +4,8 @@ import dotenv from 'dotenv';
 import path from 'path';
 import * as console from 'console';
 
-
-dotenv.config({path: path.resolve(__dirname, 'userConfig')});
+dotenv.config();
+console.log(process.env);
 
 console.info(
   banner.render(
